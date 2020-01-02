@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "strict": true,
+    "checkJs": true,
+    "moduleResolution": "node",
+    "strictNullChecks": false,
+    "noEmit": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
