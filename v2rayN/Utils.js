@@ -14,7 +14,7 @@ exports.urlEncode = (url='')=>encodeURI(url)
 const shadowsocks = require('../core_pb').v2ray.core.proxy.shadowsocks
 
 /**
- * @returns {V2rayGRPC.v2ray.core.proxy.shadowsocks.CipherType}
+ * @returns {import('../core_pb').v2ray.core.proxy.shadowsocks.CipherType}
  */
 exports.getCipherType = (name='')=>{
   let match = /**@type {any} */(name.toUpperCase())
