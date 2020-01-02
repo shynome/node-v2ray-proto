@@ -1,3 +1,4 @@
+
 const core        = require('../core_pb').v2ray.core
 const protocol    = require('../core_pb').v2ray.core.common.protocol
 const internet    = require('../core_pb').v2ray.core.transport.internet
@@ -5,7 +6,7 @@ const vmess       = require('../core_pb').v2ray.core.proxy.vmess
 const shadowsocks = require('../core_pb').v2ray.core.proxy.shadowsocks
 const socks       = require('../core_pb').v2ray.core.proxy.socks
 const proxyman    = require('../core_pb').v2ray.core.app.proxyman
-const utils       = require('../v2ray/utils')
+const utils       = require('../utils')
 const tools       = require('./Utils')
 const Conf      = require('./config')
 
@@ -83,7 +84,7 @@ function GenVMessOutboundConfig(vnext) {
       case "kcp": 
         {
           let kcpConfig = new internet.kcp.Config({
-            headerConfig: utils.ToTypedMessage(utils.SelectHackHeader(vnext.type)),
+            headerConfig: utils.ToTypedMessage(utils.SelectHackHeader(vnext.type || '')),
           })
           return new internet.StreamConfig({
             protocol         : internet.TransportProtocol.MKCP,
@@ -104,7 +105,7 @@ function GenVMessOutboundConfig(vnext) {
       case "h2": 
         {
           let httpConfig = new internet.http.Config({
-            host: vnext.host.split(','),
+            host: (vnext.host || '').split(','),
             path: vnext.path,
           })
           return new internet.StreamConfig({
@@ -121,12 +122,13 @@ function GenVMessOutboundConfig(vnext) {
   }()
 
   if(vnext.tls === 'tls'){
-    streamConfig.securityType     = utils.GetMessageType(internet.tls.Config)
-    streamConfig.securitySettings = [
-      utils.ToTypedMessage(new internet.tls.Config({
-        allowInsecure: false,
-      }))
-    ]
+    streamConfig.securityType     = utils.GetMessageType(internet.tls.Config) || ''
+    let tlsConf = utils.ToTypedMessage(new internet.tls.Config({
+      allowInsecure: false,
+    }))
+    if(tlsConf !== null){
+      streamConfig.securitySettings = [ tlsConf ]
+    }
   }
 
 	let senderConfig = new proxyman.SenderConfig({

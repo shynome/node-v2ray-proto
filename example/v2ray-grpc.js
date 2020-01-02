@@ -7,10 +7,10 @@ const dokodemo = require('../core_pb').v2ray.core.proxy.dokodemo
 const socks    = require('../core_pb').v2ray.core.proxy.socks
 const protocol = require('../core_pb').v2ray.core.common.protocol
 const net      = require('../core_pb').v2ray.core.common.net
-const utils    = require('./utils')
+const utils    = require('../utils')
 const grpc     = require('@grpc/grpc-js')
 const v2rayN   = require('../v2rayN')
-const v2config = require('../apiproxy/config')
+const v2config = require('./config')
 // @ts-ignore
 const grpcClient      = grpc.makeGenericClientConstructor({})
 
@@ -34,6 +34,8 @@ class V2ray {
     this.VNext     = options.VNext
     this.ProxyPort = 0
     this.initTask  = this.init()
+    this.client    = /**@type {import('@grpc/grpc-js/src/make-client').ServiceClient} */(null)
+    this.rpcImpl   = /**@type {any} */(null)
   }
   async initVNext(){
 
@@ -79,6 +81,7 @@ class V2ray {
     if(this.VNext){
       await this.initVNext()
     }
+    // @ts-ignore
     let client = this.client = new grpcClient(`${this.APIAddr}:${this.ProxyPort || this.APIPort}`,grpc.credentials.createInsecure(),{
       'grpc.keepalive_timeout_ms': 5e3,
       'grpc.keepalive_time_ms': 1e3,
