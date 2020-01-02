@@ -1,0 +1,3 @@
+[submodule "v2ray.com/core"]
+	path = v2ray.com/core
+	url = https://github.com/shynome/v2ray-proto.git
