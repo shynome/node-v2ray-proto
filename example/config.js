@@ -4,7 +4,7 @@ const app      = require('../core_pb').v2ray.core.app
 const router   = require('../core_pb').v2ray.core.app.router
 const proxyman = require('../core_pb').v2ray.core.app.proxyman
 const net      = require('../core_pb').v2ray.core.common.net
-const utils    = require('../v2ray/utils')
+const utils    = require('../utils')
 
 const {
   dokodemo,
@@ -14,7 +14,7 @@ const {
 
 /**
  * 
- * @param {V2rayGRPC.v2ray.core.Config} config 
+ * @param {import('../core_pb').v2ray.core.Config} config 
  */
 function withDefaultApps(config) {
   config.app.push(utils.ToTypedMessage(new app.dispatcher.Config()))
