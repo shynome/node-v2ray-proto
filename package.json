@@ -1,6 +1,6 @@
 {
   "name": "@shynome/v2ray-proto",
-  "version": "4.18.1",
+  "version": "4.18.2",
   "description": "",
   "main": "core_pb.js",
   "types": "core_pb.d.ts",
