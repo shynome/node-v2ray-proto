@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "strict": true,
     "checkJs": true,
     "moduleResolution": "node",
     "strictNullChecks": false,
+    "noImplicitAny": true,
     "noEmit": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
   ]
 }
