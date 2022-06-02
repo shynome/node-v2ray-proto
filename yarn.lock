@@ -406,20 +406,20 @@
   dependencies:
     jest-diff "^24.3.0"
 
-"@types/long@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/@types/long/download/@types/long-4.0.0.tgz#719551d2352d301ac8b81db732acb6bdc28dbdef"
-  integrity sha1-cZVR0jUtMBrIuB23Mqy2vcKNve8=
+"@types/long@^4.0.1":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.2.tgz#b74129719fc8d11c01868010082d483b7545591a"
+  integrity sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA==
 
-"@types/node@*", "@types/node@^13.1.2":
+"@types/node@*", "@types/node@>=13.7.0":
+  version "17.0.38"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.38.tgz#f8bb07c371ccb1903f3752872c89f44006132947"
+  integrity sha512-5jY9RhV7c0Z4Jy09G+NIDTsCZ5G0L5n+Z+p+Y7t5VJHM30bgwzSjVtlcBxqAj+6L/swIlvtOSzr8rBk/aNyV2g==
+
+"@types/node@^13.1.2":
   version "13.1.2"
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-13.1.2.tgz?cache=0&sync_timestamp=1577727780099&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-13.1.2.tgz#fe94285bf5e0782e1a9e5a8c482b1c34465fa385"
   integrity sha1-/pQoW/XgeC4anlqMSCscNEZfo4U=
-
-"@types/node@^10.1.0":
-  version "10.17.13"
-  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-10.17.13.tgz?cache=0&sync_timestamp=1577727780099&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-10.17.13.tgz#ccebcdb990bd6139cd16e84c39dc2fb1023ca90c"
-  integrity sha1-zOvNuZC9YTnNFuhMOdwvsQI8qQw=
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
@@ -2579,9 +2579,9 @@ prompts@^2.0.1:
     sisteransi "^1.0.3"
 
 protobufjs@^6.8.8:
-  version "6.8.8"
-  resolved "https://registry.npm.taobao.org/protobufjs/download/protobufjs-6.8.8.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fprotobufjs%2Fdownload%2Fprotobufjs-6.8.8.tgz#c8b4f1282fd7a90e6f5b109ed11c84af82908e7c"
-  integrity sha1-yLTxKC/XqQ5vWxCe0RyEr4KQjnw=
+  version "6.11.3"
+  resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.11.3.tgz#637a527205a35caa4f3e2a9a4a13ddffe0e7af74"
+  integrity sha512-xL96WDdCZYdU7Slin569tFX712BxsxslWwAfAhCYjQKGTq7dAU91Lomy6nLLhh/dyGhk/YH4TwTSRxTzhuHyZg==
   dependencies:
     "@protobufjs/aspromise" "^1.1.2"
     "@protobufjs/base64" "^1.1.2"
@@ -2593,8 +2593,8 @@ protobufjs@^6.8.8:
     "@protobufjs/path" "^1.1.2"
     "@protobufjs/pool" "^1.1.0"
     "@protobufjs/utf8" "^1.1.0"
-    "@types/long" "^4.0.0"
-    "@types/node" "^10.1.0"
+    "@types/long" "^4.0.1"
+    "@types/node" ">=13.7.0"
     long "^4.0.0"
 
 psl@^1.1.24, psl@^1.1.28:
